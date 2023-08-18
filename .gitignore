@@ -1,78 +1,70 @@
-# Created by https://www.toptal.com/developers/gitignore/api/c,c++,macos,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,macos,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/vim,tags,emacs,linux,macos,windows,visualstudiocode,vagrant
+# Edit at https://www.toptal.com/developers/gitignore?templates=vim,tags,emacs,linux,macos,windows,visualstudiocode,vagrant
 
-### C ###
-# Prerequisites
-*.d
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Org-mode
+.org-id-locations
+*_archive
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# flymake-mode
+*_flymake.*
 
-# Precompiled Headers
-*.gch
-*.pch
+# eshell files
+/eshell/history
+/eshell/lastdir
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# elpa packages
+/elpa/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# reftex files
+*.rel
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# AUCTeX auto folder
+/auto/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# cask packages
+.cask/
+dist/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Flycheck
+flycheck_*.el
 
-### C++ ###
-# Prerequisites
+# server auth directory
+/server/
 
-# Compiled Object files
-*.slo
+# projectiles files
+.projectile
 
-# Precompiled Headers
+# directory configuration
+.dir-locals.el
 
-# Compiled Dynamic libraries
+# network security
+/network-security.data
 
-# Fortran module files
-*.mod
-*.smod
 
-# Compiled Static libraries
-*.lai
+### Linux ###
 
-# Executables
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### macOS ###
 # General
@@ -103,20 +95,102 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### Tags ###
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+
+### Vagrant ###
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+### Vagrant Patch ###
+*.box
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+# Auto-generated tag files
+# Persistent undo
+[._]*.un~
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
+!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/c,c++,macos,visualstudiocode
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/vim,tags,emacs,linux,macos,windows,visualstudiocode,vagrant
+
