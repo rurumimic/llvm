@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "./share", "/share"
-  config.vm.synced_folder "./src", "/src"
+  config.vm.synced_folder "./src", "/src", type: "rsync", rsync__exclude: ".git/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -42,7 +42,12 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    echo "Install packages: git, cmake, ninja"
     pkg update -f
-    pkg install git cmake ninja
+    pkg install -y git cmake ninja
+
+    echo "System wide Vim initializations"
+    mkdir -p /usr/local/etc/vim
+    curl -o /usr/local/etc/vim/vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
   SHELL
 end

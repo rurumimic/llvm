@@ -41,7 +41,7 @@ Already provisioned with vagrant.
 
 ---
 
-## Source Code
+## llvm/llvm-project.git
 
 ```bash
 git clone https://github.com/llvm/llvm-project.git
@@ -49,18 +49,17 @@ git clone https://github.com/llvm/llvm-project.git
 
 ---
 
-## Hello World
+## Source Code
 
-- [src/helloworld/hello.c](src/helloworld/hello.c)
+- [src/helloworld](src/helloworld/README.md)
+  - [src/helloworld/hello.c](src/helloworld/hello.c)
+- [src/sum](src/sum/README.md): opt, llc, llvm-mc, lli, llvm-link, llvm-as, llvm-dis
 
-```bash
-# build
-clang hello.c -o hello
-clang -### hello.c -o hello
+---
 
-# run
-./hello
+## Ref
 
-Hello, World!
-```
+### vimrc
+
+- [vimrc](https://github.com/amix/vimrc) by amix
 
