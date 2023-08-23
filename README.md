@@ -47,6 +47,26 @@ Already provisioned with vagrant.
 git clone https://github.com/llvm/llvm-project.git
 ```
 
+### Cscope
+
+- tutorial: [Vim/Cscope](https://cscope.sourceforge.net/cscope_vim_tutorial.html)
+- [cscope_maps.vim](https://cscope.sourceforge.net/cscope_maps.vim)
+
+```bash
+cd llvm-project
+cscope -b -q -R
+```
+
+- b: just build the database without GUI
+- q: create a inverted index file
+- R: parse all subdirectories
+
+```bash
+cscope.in.out
+cscope.out
+cscope.po.out
+```
+
 ---
 
 ## Source Code
@@ -54,6 +74,7 @@ git clone https://github.com/llvm/llvm-project.git
 - [src/helloworld](src/helloworld/README.md)
   - [src/helloworld/hello.c](src/helloworld/hello.c)
 - [src/sum](src/sum/README.md): opt, llc, llvm-mc, lli, llvm-link, llvm-as, llvm-dis
+- [src/frontend](src/frontend/README.md)
 
 ---
 

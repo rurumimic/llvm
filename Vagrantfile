@@ -42,12 +42,13 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    echo "Install packages: git, cmake, ninja"
+    echo "Install packages: git, cmake, ninja, cscope"
     pkg update -f
-    pkg install -y git cmake ninja
+    pkg install -y git cmake ninja cscope
 
     echo "System wide Vim initializations"
     mkdir -p /usr/local/etc/vim
     curl -o /usr/local/etc/vim/vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
+    curl -o /usr/local/share/vim/vim90/plugin/cscope_maps.vim https://cscope.sourceforge.net/cscope_maps.vim
   SHELL
 end
