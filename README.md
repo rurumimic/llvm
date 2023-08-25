@@ -28,26 +28,46 @@ Thread model: posix
 InstalledDir: /usr/bin
 ```
 
-### Install Packages
+### Packages
 
 ```bash
 sudo pkg update -f
-sudo pkg install git
-sudo pkg install cmake
-sudo pkg install ninja
+sudo pkg install git cmake ninja cscope
 ```
-
-Already provisioned with vagrant.
 
 ---
 
 ## llvm/llvm-project.git
 
 ```bash
+cd $HOME
 git clone https://github.com/llvm/llvm-project.git
 ```
 
-### Cscope
+### Setup
+
+#### $HOME/.profile
+
+```bash
+cat <<EOF | tee -a $HOME/.profile > /dev/null
+
+alias ll='ls -alGFh'
+alias vi='vim'
+
+export CSCOPE_DB="$HOME/llvm-project/cscope.out"
+
+EOF
+```
+
+#### plugin.vim
+
+```bash
+cat /usr/local/share/vim/vim90/plugin/cscope_relative.vim
+
+set cscope_relative
+```
+
+#### Cscope
 
 - tutorial: [Vim/Cscope](https://cscope.sourceforge.net/cscope_vim_tutorial.html)
 - [cscope_maps.vim](https://cscope.sourceforge.net/cscope_maps.vim)
@@ -61,11 +81,24 @@ cscope -b -q -R
 - q: create a inverted index file
 - R: parse all subdirectories
 
+output:
+
 ```bash
 cscope.in.out
 cscope.out
 cscope.po.out
 ```
+
+#### Finding
+
+- Find
+  - `:cs find s <keyword>`: find this symbol
+    - `:cs find 0 <keyword>`
+    - `:cs f s <C-R><C-W>`: find the word under cursor
+    - `<C + \>` + `s`: find the word under cursor
+- Jump
+  - `:[count]tn[ext][!]`: Jump to count next matching tag (default 1)
+  - `:[count]tp[revious][!]`: Jump to count preivious matching tag (default 1)
 
 ---
 

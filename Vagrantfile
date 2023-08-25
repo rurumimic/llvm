@@ -50,5 +50,6 @@ Vagrant.configure("2") do |config|
     mkdir -p /usr/local/etc/vim
     curl -o /usr/local/etc/vim/vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
     curl -o /usr/local/share/vim/vim90/plugin/cscope_maps.vim https://cscope.sourceforge.net/cscope_maps.vim
+    echo "set cscoperelative" > /usr/local/share/vim/vim90/plugin/cscope_relative.vim
   SHELL
 end
